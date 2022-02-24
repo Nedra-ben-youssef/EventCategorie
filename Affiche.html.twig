@@ -1,0 +1,65 @@
+ {% extends "back-office.html.twig" %}
+
+{% block body %}
+
+
+<div id="calendrier"></div>
+    
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Data Tables</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Tables</li>
+          <li class="breadcrumb-item active">Data</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+<section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Datatables</h5>
+           
+<table border="1" class="table table-bordered border-primary">
+
+
+<tr>
+<th>name Event</th>
+<th>description Event</th>
+<th>promotion</th>
+<th>new Prix</th>
+<th>Categorie</th>
+<th>image</th>
+<th>Action</th>
+</tr>
+{% for e in Events %}
+<tr>
+
+<td>{{e.nameevent}}</td>
+<td>{{e.descriptionevent}}</td>
+<td>{{e.promotion}}</td>
+<td>{{e.newPrix}}</td>
+<td>{{e.Categorie.name}}</td>
+  <td><img src="{{ asset('/uploads/images/'~ e.image) }}" width="50" height="60"></td>
+<td> 
+    <a href="{{ path('updateevent', {'id': e.id}) }}">Modifier</a>
+
+    <a href="{{ path('deleteevent', {'id': e.id}) }}">Supprimer</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+ </div>
+          </div>
+   </div>
+        </div>
+      </div>
+</section>
+</main>
+{% endblock %}

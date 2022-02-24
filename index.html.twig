@@ -1,0 +1,85 @@
+  {% extends "back-office.html.twig" %}
+  {% block body %}
+
+  <main id="main" class="main">
+  
+      <div class="pagepromotion">
+        <h1>Evénnement</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">Tables</li>
+            <li class="breadcrumb-item active">Data</li>
+          </ol>
+        </nav>
+      </div><!-- End Page promotion -->
+      <section class="section">
+      <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-promotion"></h5>
+        
+   
+  {{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
+  <h1> Ajouter un événnement </h1>
+  <div>
+  {{ form_label(form.nameevent,"nameevent") }}
+  <div class="col-sm-10">
+
+  {{ form_widget(form.nameevent,{'attr': {'class': 'form-control'}}) }}
+
+  </div>
+  <div class="badge border-danger border-1 text-danger" >
+  {{ form_errors(form.nameevent) }}
+  </div>
+  </div>
+  <div>
+  {{ form_label(form.descriptionEvent,"DescriptionEvent") }}
+  <div class="col-sm-10">
+  {{ form_widget(form.descriptionEvent,{'attr': {'class': 'form-control'}}) }}
+  <div class="badge border-danger border-1 text-danger" >
+  {{ form_errors(form.descriptionEvent) }}
+  </div>
+    </div>
+  <div>
+
+  {{ form_label(form.promotion,"promotion") }}
+  <div class="col-sm-10">
+  {{ form_widget(form.promotion,{'attr': {'class': 'form-control'}}) }}
+  </div> 
+  <div class="badge border-danger border-1 text-danger" >
+  {{ form_errors(form.promotion) }}
+  </div>
+  </div>
+  <div>
+  {{ form_label(form.newPrix,"newPrix") }}
+  <div class="col-sm-10">
+  {{ form_widget(form.newPrix,{'attr': {'class': 'form-control'}}) }}
+  </div>
+  <div class="badge border-danger border-1 text-danger" >
+  {{ form_errors(form.newPrix) }}
+  </div>
+  </div>
+  <div>
+  {{ form_label(form.categorie,"categorie") }}
+  <div class="col-sm-10">
+  {{ form_widget(form.categorie) }}
+  </div>
+  <div class="badge border-danger border-1 text-danger" >
+  {{ form_errors(form.categorie) }}
+  </div>
+  </div>
+ 
+
+  {{ form_end(form) }}
+  </div>
+    </div>
+          </div>
+        </div>
+  </section>
+  </main>
+  
+
+
+  {% endblock %}
